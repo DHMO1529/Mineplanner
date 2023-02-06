@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D6C8407C-A875-4918-BAE8-B6A65DB1FD80}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ConsoleEmpty</RootNamespace>
+    <ProjectName>MinePlanner</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="YoshimuraDebugSeet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="YoshimuraReleaseSeet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;BOOST_SP_DISABLE_THREADS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDIR)/juce-1.53/Include;$(BOOST_DIR);$(SolutionDIR)/glm-0.9.2.3;$(SolutionDIR)/clx-0.18.2;$(SolutionDir)/zlib125;$(SolutionDir)/sqlite3x;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDIR)/juce-1.53/Lib;$(BOOST_DIR)/lib;$(SolutionDir)/zlib125;$(SolutionDir)/sqlite3x;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;BOOST_SP_DISABLE_THREADS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDIR)/juce-1.53/Include;$(BOOST_DIR);$(SolutionDIR)/glm-0.9.2.3;$(SolutionDIR)/clx-0.18.2;$(SolutionDir)/zlib125;$(SolutionDir)/sqlite3x;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDIR)/juce-1.53/Lib;$(BOOST_DIR)/lib;$(SolutionDir)/zlib125;$(SolutionDir)/sqlite3x;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="MinePlanner\UI\Application.cpp" />
+    <ClCompile Include="MinePlanner\UI\MakeSnapShot.cpp" />
+    <ClCompile Include="MinePlanner\UI\Shape\BoxDesigner.cpp" />
+    <ClCompile Include="MinePlanner\BlockSet.cpp" />
+    <ClCompile Include="MinePlanner\Collision\Aabb.cpp" />
+    <ClCompile Include="MinePlanner\Collision\Detector.cpp" />
+    <ClCompile Include="MinePlanner\Collision\Frustum.cpp" />
+    <ClCompile Include="MinePlanner\Collision\Intersect.cpp" />
+    <ClCompile Include="MinePlanner\Collision\OctNode.cpp" />
+    <ClCompile Include="MinePlanner\Collision\Plane.cpp" />
+    <ClCompile Include="MinePlanner\Collision\RayCastResult.cpp" />
+    <ClCompile Include="MinePlanner\DataBase\BlockAttributeTable.cpp" />
+    <ClCompile Include="MinePlanner\DataBase\BlockColorTable.cpp" />
+    <ClCompile Include="MinePlanner\DataBase\BlockMaster.cpp" />
+    <ClCompile Include="MinePlanner\DataBase\ComboBoxTable.cpp" />
+    <ClCompile Include="MinePlanner\DataBase\DataBase.cpp" />
+    <ClCompile Include="MinePlanner\DataBase\OldBlockNameTable.cpp" />
+    <ClCompile Include="MinePlanner\DataBase\RawBlockTable.cpp" />
+    <ClCompile Include="MinePlanner\DataBase\TextureDataTable.cpp" />
+    <ClCompile Include="MinePlanner\getBlockPose.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawBlock.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawBlocksInEdit.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawFullBlocks.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawSelectPointSet.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawSliceBlocks.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawTransparentBlockSet.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawArrangeXYZ.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawXYZAxis.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawXYZIcon.cpp" />
+    <ClCompile Include="MinePlanner\graphic\getFps.cpp" />
+    <ClCompile Include="MinePlanner\graphic\graphic.cpp" />
+    <ClCompile Include="MinePlanner\graphic\Resource.cpp" />
+    <ClCompile Include="MinePlanner\graphic\SetResolution.cpp" />
+    <ClCompile Include="MinePlanner\Net\UpdateCheck.cpp" />
+    <ClCompile Include="MinePlanner\Operation\ArrangementManager.cpp" />
+    <ClCompile Include="MinePlanner\Operation\BinvoxToBlocks.cpp" />
+    <ClCompile Include="MinePlanner\Operation\ClipBoard.cpp" />
+    <ClCompile Include="MinePlanner\graphic\GetResolution.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawRect.cpp" />
+    <ClCompile Include="MinePlanner\Operation\BasicWork.cpp" />
+    <ClCompile Include="MinePlanner\Operation\BatchWork.cpp" />
+    <ClCompile Include="MinePlanner\Operation\EditManager.cpp" />
+    <ClCompile Include="MinePlanner\ApplicationConstant.cpp" />
+    <ClCompile Include="MinePlanner\Color.cpp" />
+    <ClCompile Include="MinePlanner\GlobalConfig.cpp" />
+    <ClCompile Include="MinePlanner\graphic\Model.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DisplayList.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawLookAt.cpp" />
+    <ClCompile Include="MinePlanner\Operation\BasicEditor.cpp" />
+    <ClCompile Include="MinePlanner\Operation\HideBuffer.cpp" />
+    <ClCompile Include="MinePlanner\Operation\OpenOldPlan.cpp" />
+    <ClCompile Include="MinePlanner\Operation\OpenPlan.cpp" />
+    <ClCompile Include="MinePlanner\Operation\OpenSchematic.cpp" />
+    <ClCompile Include="MinePlanner\Operation\SavePlan.cpp" />
+    <ClCompile Include="MinePlanner\Operation\SaveSchematic.cpp" />
+    <ClCompile Include="MinePlanner\PointSet.cpp" />
+    <ClCompile Include="MinePlanner\Pose.cpp" />
+    <ClCompile Include="MinePlanner\Shape\CreateCone.cpp" />
+    <ClCompile Include="MinePlanner\UI\BlockHistory.cpp" />
+    <ClCompile Include="MinePlanner\UI\EventHandler\ImportModel.cpp" />
+    <ClCompile Include="MinePlanner\Operation\OpenPicture.cpp" />
+    <ClCompile Include="MinePlanner\Operation\Manager_op.cpp" />
+    <ClCompile Include="MinePlanner\Operation\OpenCubeKingdom.cpp" />
+    <ClCompile Include="MinePlanner\Operation\SelectionManager.cpp" />
+    <ClCompile Include="MinePlanner\Operation\UnRedoSystem.cpp" />
+    <ClCompile Include="MinePlanner\graphic\BrendMode.cpp" />
+    <ClCompile Include="MinePlanner\graphic\Camera.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawContour.cpp" />
+    <ClCompile Include="MinePlanner\graphic\DrawGrid.cpp" />
+    <ClCompile Include="MinePlanner\graphic\FpsCount.cpp" />
+    <ClCompile Include="MinePlanner\graphic\FpsCounter.cpp" />
+    <ClCompile Include="MinePlanner\graphic\Light.cpp" />
+    <ClCompile Include="MinePlanner\graphic\Cube.cpp" />
+    <ClCompile Include="MinePlanner\graphic\NowFps.cpp" />
+    <ClCompile Include="MinePlanner\graphic\Rendering.cpp" />
+    <ClCompile Include="MinePlanner\graphic\Resolution.cpp" />
+    <ClCompile Include="MinePlanner\graphic\ScopedAttribPush.cpp" />
+    <ClCompile Include="MinePlanner\graphic\ScopedMatPush.cpp" />
+    <ClCompile Include="MinePlanner\graphic\Texture.cpp" />
+    <ClCompile Include="MinePlanner\Log\DebugPrint.cpp" />
+    <ClCompile Include="MinePlanner\Log\Logger.cpp" />
+    <ClCompile Include="MinePlanner\main.cpp" />
+    <ClCompile Include="MinePlanner\PathSetup.cpp" />
+    <ClCompile Include="MinePlanner\Point.cpp" />
+    <ClCompile Include="MinePlanner\Rect.cpp" />
+    <ClCompile Include="MinePlanner\SampleFileDef.cpp" />
+    <ClCompile Include="MinePlanner\Shape\CreateBox.cpp" />
+    <ClCompile Include="MinePlanner\Shape\CreateCylinder.cpp" />
+    <ClCompile Include="MinePlanner\Shape\CreateSphere.cpp" />
+    <ClCompile Include="MinePlanner\Shape\Optimize.cpp" />
+    <ClCompile Include="MinePlanner\string_cast.cpp" />
+    <ClCompile Include="MinePlanner\UI\ArrangeUI.cpp" />
+    <ClCompile Include="MinePlanner\UI\EditModeComponent.cpp" />
+    <ClCompile Include="MinePlanner\UI\EventHandler\Functions_eh.cpp" />
+    <ClCompile Include="MinePlanner\UI\isLockSaveSchematic.cpp" />
+    <ClCompile Include="MinePlanner\UI\MainComponent.cpp" />
+    <ClCompile Include="MinePlanner\UI\ModelImportDialog.cpp" />
+    <ClCompile Include="MinePlanner\UI\MyLookAndFeel.cpp" />
+    <ClCompile Include="MinePlanner\UI\MyMenuBar.cpp" />
+    <ClCompile Include="MinePlanner\UI\NecessaryMaterialDialog.cpp" />
+    <ClCompile Include="MinePlanner\UI\RepaintOpenGL.cpp" />
+    <ClCompile Include="MinePlanner\UI\ReplaceDialog.cpp" />
+    <ClCompile Include="MinePlanner\UI\Shape\ConeDesigner.cpp" />
+    <ClCompile Include="MinePlanner\UI\Shape\CylinderDesigner.cpp" />
+    <ClCompile Include="MinePlanner\UI\Shape\PrevCanvas.cpp" />
+    <ClCompile Include="MinePlanner\UI\Shape\SphereDesigner.cpp" />
+    <ClCompile Include="MinePlanner\UI\SubModeBasicComponent.cpp" />
+    <ClCompile Include="MinePlanner\UI\SubModeSelectComponent.cpp" />
+    <ClCompile Include="MinePlanner\UI\SubModeTab.cpp" />
+    <ClCompile Include="MinePlanner\UI\ViewModeComponent.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\ArrangeWidget.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\BlockTypeComboBox.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\CameraModeButton.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\EditTypeButton.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\ModeButton.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\MyButton.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\MyCheckButton.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\MyNumericUpDown.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\NecessaryMaterialTable.cpp" />
+    <ClCompile Include="MinePlanner\UI\Widget\OpenGLScreen.cpp" />
+    <ClCompile Include="MinePlanner\UI\MainWindow.cpp" />
+    <ClCompile Include="MinePlanner\World.cpp" />
+    <ClCompile Include="nbt\nbtFunctions.cpp" />
+    <ClCompile Include="nbt\Tag.cpp" />
+    <ClCompile Include="Platform\CreateDesktopShortCut.cpp" />
+    <ClCompile Include="Platform\FileDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MinePlanner\UI\MakeSnapShot.hpp" />
+    <ClInclude Include="MinePlanner\UI\Shape\BoxDesigner.hpp" />
+    <ClInclude Include="MinePlanner\BlockSet.hpp" />
+    <ClInclude Include="MinePlanner\block_set_implementation.hpp" />
+    <ClInclude Include="MinePlanner\Collision\Aabb.hpp" />
+    <ClInclude Include="MinePlanner\Collision\Detector.hpp" />
+    <ClInclude Include="MinePlanner\Collision\detector_implementation.hpp" />
+    <ClInclude Include="MinePlanner\Collision\Frustum.hpp" />
+    <ClInclude Include="MinePlanner\Collision\Intersect.hpp" />
+    <ClInclude Include="MinePlanner\Collision\OctNode.hpp" />
+    <ClInclude Include="MinePlanner\Collision\Plane.hpp" />
+    <ClInclude Include="MinePlanner\Collision\RayCastResult.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\BlockAttributeDef.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\BlockAttributeTable.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\BlockColorTable.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\BlockMaster.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\ComboBoxTable.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\DataBase.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\FaceDef.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\OldBlockNameTable.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\RawBlockData.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\RawBlockTable.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\TextureData.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\TextureDataTable.hpp" />
+    <ClInclude Include="MinePlanner\DataBase\UV.hpp" />
+    <ClInclude Include="MinePlanner\getBlockPose.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawBlock.hpp" />
+    <ClInclude Include="mineplanner\graphic\drawblocksinedit.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawFullBlocks.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawSelectPointSet.hpp" />
+    <ClInclude Include="mineplanner\graphic\drawsliceblocks.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawTransparentBlockSet.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawArrangeXYZ.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawXYZIcon.hpp" />
+    <ClInclude Include="MinePlanner\graphic\getFps.hpp" />
+    <ClInclude Include="MinePlanner\graphic\graphic.hpp" />
+    <ClInclude Include="MinePlanner\graphic\Resource.hpp" />
+    <ClInclude Include="MinePlanner\graphic\SetResolution.hpp" />
+    <ClInclude Include="MinePlanner\Net\UpdateCheck.hpp" />
+    <ClInclude Include="MinePlanner\Operation\ArrangementManager.hpp" />
+    <ClInclude Include="MinePlanner\Operation\BinvoxToBlocks.hpp" />
+    <ClInclude Include="MinePlanner\Operation\ClipBoard.hpp" />
+    <ClInclude Include="MinePlanner\graphic\GetResolution.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawRect.hpp" />
+    <ClInclude Include="MinePlanner\Operation\BasicWork.hpp" />
+    <ClInclude Include="MinePlanner\Operation\BatchWork.hpp" />
+    <ClInclude Include="MinePlanner\Operation\EditManager.hpp" />
+    <ClInclude Include="MinePlanner\Operation\HideBuffer.hpp" />
+    <ClInclude Include="MinePlanner\Operation\OpenOldPlan.hpp" />
+    <ClInclude Include="MinePlanner\Operation\OpenPlan.hpp" />
+    <ClInclude Include="MinePlanner\Operation\OpenPicture.hpp" />
+    <ClInclude Include="MinePlanner\Color.hpp" />
+    <ClInclude Include="MinePlanner\GlobalConfigEnumDef.hpp" />
+    <ClInclude Include="MinePlanner\GlobalConfig.hpp" />
+    <ClInclude Include="MinePlanner\ApplicationConstant.hpp" />
+    <ClInclude Include="MinePlanner\graphic\Model.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DisplayList.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawLookAt.hpp" />
+    <ClInclude Include="MinePlanner\Operation\BasicEditor.hpp" />
+    <ClInclude Include="MinePlanner\Operation\OpenSchematic.hpp" />
+    <ClInclude Include="MinePlanner\Operation\SavePlan.hpp" />
+    <ClInclude Include="MinePlanner\Operation\SaveSchematic.hpp" />
+    <ClInclude Include="MinePlanner\PointSet.hpp" />
+    <ClInclude Include="MinePlanner\point_set_implementation.hpp" />
+    <ClInclude Include="MinePlanner\Pose.hpp" />
+    <ClInclude Include="MinePlanner\Shape\CreateCone.hpp" />
+    <ClInclude Include="MinePlanner\UI\BlockHistory.hpp" />
+    <ClInclude Include="MinePlanner\UI\EventHandler\ImportModel.hpp" />
+    <ClInclude Include="MinePlanner\Operation\Manager.hpp" />
+    <ClInclude Include="MinePlanner\Operation\OpenCubeKingdom.hpp" />
+    <ClInclude Include="MinePlanner\Operation\SelectionManager.hpp" />
+    <ClInclude Include="MinePlanner\Operation\UnRedoSystem.hpp" />
+    <ClInclude Include="MinePlanner\Operation\Work.hpp" />
+    <ClInclude Include="MinePlanner\graphic\BrendMode.hpp" />
+    <ClInclude Include="MinePlanner\graphic\Camera.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawContour.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawGrid.hpp" />
+    <ClInclude Include="MinePlanner\graphic\FpsCount.hpp" />
+    <ClInclude Include="MinePlanner\graphic\DrawXYZAxis.hpp" />
+    <ClInclude Include="MinePlanner\graphic\FpsCounter.hpp" />
+    <ClInclude Include="MinePlanner\graphic\gl.hpp" />
+    <ClInclude Include="MinePlanner\graphic\Light.hpp" />
+    <ClInclude Include="MinePlanner\graphic\Cube.hpp" />
+    <ClInclude Include="MinePlanner\graphic\NowFps.hpp" />
+    <ClInclude Include="MinePlanner\graphic\Rendering.hpp" />
+    <ClInclude Include="MinePlanner\graphic\Resolution.hpp" />
+    <ClInclude Include="MinePlanner\graphic\ScopedAttribPush.hpp" />
+    <ClInclude Include="MinePlanner\graphic\ScopedMatPush.hpp" />
+    <ClInclude Include="MinePlanner\graphic\Texture.hpp" />
+    <ClInclude Include="MinePlanner\Log\DebugPrint.hpp" />
+    <ClInclude Include="MinePlanner\Log\Logger.hpp" />
+    <ClInclude Include="MinePlanner\Log\LogManager.hpp" />
+    <ClInclude Include="MinePlanner\main.hpp" />
+    <ClInclude Include="MinePlanner\PathSetup.hpp" />
+    <ClInclude Include="MinePlanner\Point.hpp" />
+    <ClInclude Include="MinePlanner\Rect.hpp" />
+    <ClInclude Include="MinePlanner\SampleFileDef.hpp" />
+    <ClInclude Include="MinePlanner\Shape\CreateBox.hpp" />
+    <ClInclude Include="MinePlanner\Shape\CreateCylinder.hpp" />
+    <ClInclude Include="MinePlanner\Shape\CreateSphere.hpp" />
+    <ClInclude Include="MinePlanner\Shape\Optimize.hpp" />
+    <ClInclude Include="MinePlanner\string_cast.hpp" />
+    <ClInclude Include="MinePlanner\UI\ArrangeUI.hpp" />
+    <ClInclude Include="MinePlanner\UI\EditModeComponent.hpp" />
+    <ClInclude Include="MinePlanner\UI\EventHandler\Functions.hpp" />
+    <ClInclude Include="MinePlanner\UI\isLockSaveSchematic.hpp" />
+    <ClInclude Include="MinePlanner\UI\MainComponent.hpp" />
+    <ClInclude Include="MinePlanner\UI\ModelImportDialog.hpp" />
+    <ClInclude Include="MinePlanner\UI\MyMenuBar.hpp" />
+    <ClInclude Include="MinePlanner\UI\MyLookAndFeel.hpp" />
+    <ClInclude Include="MinePlanner\UI\NecessaryMaterialDialog.hpp" />
+    <ClInclude Include="MinePlanner\UI\RepaintOpenGL.hpp" />
+    <ClInclude Include="MinePlanner\UI\ReplaceDialog.hpp" />
+    <ClInclude Include="MinePlanner\UI\Shape\ConeDesigner.hpp" />
+    <ClInclude Include="MinePlanner\UI\Shape\CylinderDesigner.hpp" />
+    <ClInclude Include="MinePlanner\UI\Shape\PrevCanvas.hpp" />
+    <ClInclude Include="MinePlanner\UI\Shape\SphereDesigner.hpp" />
+    <ClInclude Include="MinePlanner\UI\SubModeBasicComponent.hpp" />
+    <ClInclude Include="MinePlanner\UI\SubModeSelectComponent.hpp" />
+    <ClInclude Include="MinePlanner\UI\SubModeTab.hpp" />
+    <ClInclude Include="MinePlanner\UI\ViewModeComponent.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\ArrangeWidget.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\BlockTypeComboBox.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\CameraModeButton.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\EditTypeButton.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\ModeButton.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\MyButton.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\MyCheckButton.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\MyNumericUpDown.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\NecessaryMaterialTable.hpp" />
+    <ClInclude Include="MinePlanner\UI\Widget\OpenGLScreen.hpp" />
+    <ClInclude Include="MinePlanner\UI\MainWindow.hpp" />
+    <ClInclude Include="MinePlanner\World.hpp" />
+    <ClInclude Include="nbt\nbt.hpp" />
+    <ClInclude Include="nbt\nbtFunctions.hpp" />
+    <ClInclude Include="nbt\Tag.hpp" />
+    <ClInclude Include="nbt\TagType.hpp" />
+    <ClInclude Include="Platform\CreateDesktopShortCut.hpp" />
+    <ClInclude Include="Platform\FileDialog.hpp" />
+    <ClInclude Include="Util\Lerp.hpp" />
+    <ClInclude Include="Util\reverse_endian.hpp" />
+    <ClInclude Include="Util\setupLocale.hpp" />
+    <ClInclude Include="Util\SingleInstanceAndGlobalAcess.hpp" />
+    <ClInclude Include="Util\Singleton.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
