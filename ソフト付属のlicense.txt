@@ -1,27 +1,27 @@
-tool/binvox.exe�͎��i�������j�̒��앨�ł͂���܂���B
-�̒��쌠��51 Franklin Street, Fifth Floor, Boston�ɋA�����܂��B
-���C�Z���X�𕶂��Q�Ƃ��Ă��������B
+tool/binvox.exeは私（うしお）の著作物ではありません。
+の著作権は51 Franklin Street, Fifth Floor, Bostonに帰属します。
+ライセンス条文を参照してください。
 tool/LICENSE.txt
 
-�T���v���R�c���f���AQB.dxf�̒��쌠��itiou805�i���������j����ɋA�����܂��B
+サンプル３Ｄモデル、QB.dxfの著作権はitiou805（うおいち）さんに帰属します。
 http://itiou805.blog39.fc2.com/blog-entry-8.html#cm
 
-�{�\�t�g�E�F�A�͈ȉ��̃��C�u�������g�p���Ă���܂��B
-���΂炵���\�t�g�E�F�A�̐��X�Ɋ��ӂ̔O���s���܂���B
-�܂��g�p���C�u������gpl������܂��̂ŁA���̃\�t�g�E�F�A��gpl�ł̒񋟂ɂȂ�܂��B
+本ソフトウェアは以下のライブラリを使用しております。
+すばらしいソフトウェアの数々に感謝の念が尽きません。
+また使用ライブラリにgplがありますので、このソフトウェアもgplでの提供になります。
 
-�EOpengl
-  �O���t�B�b�N
-�Eboost1.47 (Boost Software License)
-  �ėp
-�Eclx Library(BSD License)
-  �ėp�A�l�b�g���[�N
-�Ejuce library
-  GUI�c�[���L�b�g(GPLv2)
-�Eglm (MITLicense)
-  ���w�A�x�N�g���A�s�񃉃C�u����
-�Esqlite3x (zlib License)
-  sqlite3�̃��b�p�[
+・Opengl
+  グラフィック
+・boost1.47 (Boost Software License)
+  汎用
+・clx Library(BSD License)
+  汎用、ネットワーク
+・juce library
+  GUIツールキット(GPLv2)
+・glm (MITLicense)
+  数学、ベクトル、行列ライブラリ
+・sqlite3x (zlib License)
+  sqlite3のラッパー
 
 <clx>
 Copyright (c) 2004 - 2010, clown
