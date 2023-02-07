@@ -1,6 +1,10 @@
 # Mineplanner(fork)
+色々改造する(予定)
 
-
+## 欲しい機能
+- [] Java版向けテクスチャパックを読み込み、使用可能ブロックを追加する
+- [] ブロック名を検索
+- [] 上付きハーフの追加
 
 ## ソース配布元
 https://code.google.com/archive/p/mineplanner/downloads
